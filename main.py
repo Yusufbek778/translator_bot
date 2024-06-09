@@ -76,13 +76,13 @@ def translate(message: types.Message, lang_from, lang_to):
     db.add_translation(_from, _to, message.text, translated_text, chat_id)
     bot.send_message(chat_id, translated_text)
 
-def send_history(message):
-    user_id = message.from.user.id
-    if user_id in user_translations:
-        history = "\n".join([f."{original}:{translated}" for original, translated in user_translations[user_id].items()])
-        bot.reply_to(message, f"История переводов:\n{history}")
-    else:
-        bot.reply_to(message, f"История переводов пусто.")
+# def send_history(message):
+#     user_id = message.from_user.id
+#     if user_id in user_translations:
+#         history = "\n".join([f"{original}:{translated}" for original, translated in user_translations[user_id].items()])
+#         bot.reply_to(message, f"История переводов:\n{history}")
+#     else:
+#         bot.reply_to(message, f"История переводов пусто.")
 
 
 
